@@ -10,23 +10,15 @@
   const isKakao = /KAKAOTALK/i.test(navigator.userAgent);
 
   if (isKakao) {
-    // 1. 사용자 클릭 유도 (필수 - 자동이 막힐 수 있음)
     const url = location.href;
 
-    document.addEventListener("DOMContentLoaded", function () {
-      document.body.innerHTML = `
-        <div style="text-align:center;padding:50px;font-family:sans-serif;">
-          <h3>카카오톡에서는 Chrome으로 열어주세요</h3>
-          <button id="go" style="padding:12px 20px;font-size:16px;">
-            Chrome으로 열기
-          </button>
-        </div>
-      `;
+    setTimeout(() => {
+      location.href = "googlechrome://navigate?url=" + encodeURIComponent(url);
+    }, 50);
 
-      document.getElementById("go").onclick = function () {
-        location.href = url;
-      };
-    });
+    setTimeout(() => {
+      location.href = url; // fallback
+    }, 500);
   }
 })();
 </script>
