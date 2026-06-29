@@ -4,29 +4,18 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- 🔥 KAKAO TALK FIX (추가됨) -->
-  <script>
+<script>
 (function () {
   const isKakao = /KAKAOTALK/i.test(navigator.userAgent);
+  const url = "https://money-market-homepage-rhsl.netlify.app/";
 
-  // 🔥 핵심: 1번만 실행되게 막기
-  const alreadyTried = sessionStorage.getItem("kakao_redirect_done");
-
-  if (isKakao && !alreadyTried) {
-    sessionStorage.setItem("kakao_redirect_done", "1");
-
-    const url = location.href;
-
-    // Chrome 강제 시도
+  if (isKakao) {
     setTimeout(() => {
       location.href =
-        "googlechrome://navigate?url=" + encodeURIComponent(url);
-    }, 50);
-
-    // fallback (1번만)
-    setTimeout(() => {
-      location.href = url;
-    }, 800);
+        "intent://" +
+        url.replace("https://", "") +
+        "#Intent;scheme=https;package=com.android.chrome;end;";
+    }, 100);
   }
 })();
 </script>
