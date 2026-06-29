@@ -4,6 +4,28 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<!-- 🔥 KAKAO TALK FIX (추가됨) -->
+  <script>
+    (function () {
+      const isKakao = /KAKAOTALK/i.test(navigator.userAgent);
+
+      if (isKakao) {
+        document.body.innerHTML = `
+          <div style="text-align:center;padding:50px;font-size:16px;">
+            카카오톡에서는 정상 실행을 위해<br>
+            Chrome 브라우저로 이동합니다...
+          </div>
+        `;
+
+        setTimeout(() => {
+          location.href =
+            "kakaotalk://web/openExternal?url=" +
+            encodeURIComponent(location.href);
+        }, 200);
+      }
+    })();
+  </script>
+
 <!-- SEO -->
 <title>Money Market | 가상화폐·비트코인·주식 자동매매 프로그램</title>
 <meta name="description" content="비트코인, 가상화폐, 주식 자동매매 프로그램과 투자 교육, 뉴스, 이벤트까지 한 번에 확인 가능한 Money Market. 쉽고 안전하게 자동 투자 시작하세요.">
