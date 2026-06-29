@@ -6,25 +6,30 @@
 
 <!-- 🔥 KAKAO TALK FIX (추가됨) -->
   <script>
-    (function () {
-      const isKakao = /KAKAOTALK/i.test(navigator.userAgent);
+(function () {
+  const isKakao = /KAKAOTALK/i.test(navigator.userAgent);
 
-      if (isKakao) {
-        document.body.innerHTML = `
-          <div style="text-align:center;padding:50px;font-size:16px;">
-            카카오톡에서는 정상 실행을 위해<br>
-            Chrome 브라우저로 이동합니다...
-          </div>
-        `;
+  if (isKakao) {
+    // 1. 사용자 클릭 유도 (필수 - 자동이 막힐 수 있음)
+    const url = location.href;
 
-        setTimeout(() => {
-          location.href =
-            "kakaotalk://web/openExternal?url=" +
-            encodeURIComponent(location.href);
-        }, 200);
-      }
-    })();
-  </script>
+    document.addEventListener("DOMContentLoaded", function () {
+      document.body.innerHTML = `
+        <div style="text-align:center;padding:50px;font-family:sans-serif;">
+          <h3>카카오톡에서는 Chrome으로 열어주세요</h3>
+          <button id="go" style="padding:12px 20px;font-size:16px;">
+            Chrome으로 열기
+          </button>
+        </div>
+      `;
+
+      document.getElementById("go").onclick = function () {
+        location.href = url;
+      };
+    });
+  }
+})();
+</script>
 
 <!-- SEO -->
 <title>Money Market | 가상화폐·비트코인·주식 자동매매 프로그램</title>
