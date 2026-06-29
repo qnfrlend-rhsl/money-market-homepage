@@ -1,4 +1,4 @@
-/**
+/*
 * Template Name: Passion
 * Template URL: https://bootstrapmade.com/passion-bootstrap-template/
 * Updated: Jul 21 2025 with Bootstrap v5.3.7
@@ -1254,6 +1254,7 @@ section,
   border-radius: 50px;
   margin-bottom: 20px;
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border: 1px solid color-mix(in srgb, var(--accent-color), transparent 60%);
 }
 
@@ -1353,6 +1354,7 @@ section,
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(10px);
   border-radius: 16px;
   padding: 24px;
   display: flex;
@@ -2143,6 +2145,7 @@ section,
   background: color-mix(in srgb, var(--surface-color), transparent 50%);
   border-radius: 16px;
   backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .features .nav-tabs .nav-item {
@@ -2436,7 +2439,7 @@ section,
   left: 0;
   right: 0;
   bottom: 0;
-  background: url("../img/abstract-bg-3.webp") center/cover;
+   background: url("assets/img/abstract-bg-3.webp") center/cover;
   opacity: 0.03;
   z-index: 1;
 }

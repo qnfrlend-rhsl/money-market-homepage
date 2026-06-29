@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!-- SEO -->
-<title>Money Market | 가상화폐·비트코인·주식 자동매매 프로그램 제작소</title>
+<title>비트코인·가상화폐·주식 자동매매 프로그램 | Money Market</title>
 <meta name="description" content="비트코인, 가상화폐, 주식 자동매매 프로그램과 투자 교육, 뉴스, 이벤트까지 한 번에 확인 가능한 Money Market. 쉽고 안전하게 자동 투자 시작하세요.">
 <meta name="keywords" content="비트코인 자동매매, 가상화폐 자동매매, 코인 자동매매 프로그램, 주식 자동매매, 투자 교육, 투자 뉴스, 자동 투자, 머니마켓">
 <meta name="robots" content="index, follow">
@@ -35,7 +35,6 @@
 <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
 <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 <link href="assets/css/main.css" rel="stylesheet">
-<link rel="manifest" href="manifest.json">
 </head>
 
 <body class="index-page">
@@ -99,7 +98,6 @@
 <li><a href="#" data-protected="true" data-url="삭제https://github.com/qnfrlend-rhsl/20251130_AutoTrade/releases/download/v1.0/20251130_._v1.3.zip">핸드폰</a></li>
 </ul>
 </li>
-
 </ul>
 </li>
 -->
@@ -171,31 +169,44 @@ alert("비밀번호 오류");
 });
 })();
 
-/* 라이선스 인증 */
-document.getElementById("license-form").addEventListener("submit",async e=>{
-e.preventDefault();
-const key=document.getElementById("license-key").value.trim();
-const result=document.getElementById("license-result");
+/* 라이선스 인증 
+const form = document.getElementById("license-form");
 
-if(key===""){
-result.innerHTML="<span style='color:red'>키 입력</span>";
-return;
-}
+if (form) {
+  form.addEventListener("submit", async e => {
+    e.preventDefault();
 
-/* 실제 서버 연결 자리 */
-try{
-/* 데모: 5자리 이상이면 통과 */
-if(key.length>=5){
-result.innerHTML="<span style='color:green'>인증 완료</span>";
-}else{
-result.innerHTML="<span style='color:red'>인증 실패</span>";
+    const keyEl = document.getElementById("license-key");
+    const result = document.getElementById("license-result");
+
+    // 요소 존재 여부까지 안전 체크
+    if (!keyEl || !result) return;
+
+    const key = keyEl.value.trim();
+
+    if (key === "") {
+      result.innerHTML = "<span style='color:red'>키 입력</span>";
+      return;
+    }
+
+    /* 실제 서버 연결 자리 
+    try {
+      // 데모: 5자리 이상이면 통과
+      if (key.length >= 5) {
+        result.innerHTML = "<span style='color:green'>인증 완료</span>";
+      } else {
+        result.innerHTML = "<span style='color:red'>인증 실패</span>";
+      }
+
+    } catch (err) {
+      console.error(err);
+      result.innerHTML = "<span style='color:red'>서버 오류</span>";
+    }
+  });
 }
-}catch(err){
-result.innerHTML="<span style='color:red'>서버 오류</span>";
-}
-});
+*/
+
 </script>
--->
 
 
 <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -1213,8 +1224,13 @@ resetBtn.onclick = () => {
         <div class="row">
           <div class="col-12">
             <div class="swiper-navigation">
-              <button class="swiper-nav-prev"><i class="bi bi-chevron-left"></i></button>
-              <button class="swiper-nav-next"><i class="bi bi-chevron-right"></i></button>
+              <button class="swiper-nav-prev" aria-label="이전 슬라이드">
+  <i class="bi bi-chevron-left"></i>
+</button>
+
+<button class="swiper-nav-next" aria-label="다음 슬라이드">
+  <i class="bi bi-chevron-right"></i>
+</button>
             </div>
           </div>
         </div>
