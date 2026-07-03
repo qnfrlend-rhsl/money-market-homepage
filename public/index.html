@@ -277,7 +277,7 @@ if (form) {
        문자 접수: 010 8429 5368<br>
        (문의: 영업부장님 이메일 / "부업(알바)하실 분" 문자하시면 됩니다.)<br><br>
        “지인찬스” 지인 소개하시는 분에게 구매 시 15% 캐시백 혜택!!<br><br>
-       ✅ "홍보 이벤트: 당첨 분은 010-8429-5368 문자 하시면 됩니다!"
+       ✅ 홍보 이벤트: 당첨 분은 010-8429-5368 문자 하시면 됩니다!
     </p><br>
 
     <div style="display:flex; align-items:center; gap:8px; margin-top:4px;">
@@ -338,6 +338,8 @@ if (form) {
 </div>
 
 <script>
+
+
 (function(){
 
 if(window.counterScriptLoaded) return;
@@ -350,7 +352,10 @@ const downloadCount = document.getElementById("downloadCount");
 const resetBtn = document.getElementById("resetCountsBtn");
 
 const INIT_VISIT = 105;
-const INIT_DOWNLOAD = 98;
+const INIT_DOWNLOAD = 102;
+
+visitCount.innerText = INIT_VISIT;
+downloadCount.innerText = INIT_DOWNLOAD;
 
 function loadCounts(){
   let visitValue = localStorage.getItem("visitCount");
@@ -372,6 +377,7 @@ function loadCounts(){
 
 loadCounts();
 
+/* /////////////////////////////////////////////////  주석 풀면 화면에서 클릭할 때마다 숫자 올라감.
 visitCard.onclick = () => {
   let current = parseInt(visitCount.innerText);
   current++;
@@ -385,6 +391,7 @@ downloadCard.onclick = () => {
   downloadCount.innerText = current;
   localStorage.setItem("downloadCount", current);
 };
+*/
 
 resetBtn.onclick = () => {
   const pw = prompt("관리자 비밀번호:");
