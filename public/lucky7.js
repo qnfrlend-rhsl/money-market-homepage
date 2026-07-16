@@ -4,19 +4,22 @@ const luckySites = [
     {
         name:"우동폰",
         image:"lucky7-images/udongpon.png",
-        url:"https://udongpon.netlify.app/"
+        url:"https://udongpon.netlify.app/",
+        desc:"스마트한 정보와 다양한 콘텐츠를 만나보세요."
     },
 
     {
         name:"Sea Story",
         image:"lucky7-images/sea-story.png",
-        url:"https://sea-story-3d-rhsl.netlify.app/"
+        url:"https://sea-story-3d-rhsl.netlify.app/",
+        desc:"시원한 바다 테마와 재미있는 게임을 즐겨보세요."
     },
 
     {
-        name:"가가샵",
+        name:"춘천사랑 농축임수 센터",
         image:"lucky7-images/gaga-shop.png",
-        url:"https://gaga-shop.netlify.app/"
+        url:"https://gaga-shop.netlify.app/",
+        desc:"믿을 수 있는 농축임수 상품을 만나보세요."
     }
 
 ];
@@ -63,7 +66,7 @@ function showLucky7(){
             </h3>
 
             <p class="lucky7-site-desc">
-                새로운 정보와 서비스를 만나보세요.
+                ${luckySites[currentIndex].desc}
             </p>
 
             <p class="lucky7-timer">
@@ -72,7 +75,7 @@ function showLucky7(){
             </p>
 
             <p class="lucky7-message">
-                방문 버튼은 7초 후 활성화됩니다.
+                7초 후 행운이 활성화됩니다.
             </p>
 
             <button class="lucky7-visit">

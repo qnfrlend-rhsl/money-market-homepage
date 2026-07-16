@@ -98,9 +98,13 @@
 
 .lucky7-site-desc {
 
-    font-size:14px;
+    font-size:12px;
+    font-weight:900;
+    color:#333;
 
-    color:#666;
+    background:#fff8dc;
+    padding:6px 10px;
+    border-radius:8px;
 
 }
 
