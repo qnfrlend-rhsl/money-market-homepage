@@ -51,6 +51,10 @@
 <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
 <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 <link href="assets/css/main.css" rel="stylesheet">
+
+<!-- 🍀 Lucky 7 CSS -->
+<link href="lucky7.css" rel="stylesheet">
+
 <link rel="manifest" href="manifest.json">
 <link rel="icon" href="images/icon-512.png">
 </head>
@@ -907,7 +911,7 @@ box-shadow:0 10px 30px rgba(0,0,0,.25); /* 그림자 */
      1px -1px 0 #fff,
     -1px  1px 0 #fff,
      1px  1px 0 #fff; ">
-    동네 맛집인데 휴업중이라네요 ㅜㅜ<br>
+    동네 맛집인데~~~<br>
     예약전화: 000-000-0000</div>
   </div>
 </div>
@@ -1077,6 +1081,16 @@ box-shadow:0 10px 30px rgba(0,0,0,.25); /* 그림자 */
     saveLottoData(data);
     updateCounter();
 
+    // 🍀 Lucky7 광고 실행 조건
+    if(
+    data.count >= 3 &&
+    data.count % 2 === 1
+    ){
+
+    showLucky7();
+
+    }
+
     let numbers = [];
     while(numbers.length < 6){
       const num = Math.floor(Math.random() * 45) + 1;
@@ -1119,7 +1133,9 @@ box-shadow:0 10px 30px rgba(0,0,0,.25); /* 그림자 */
   });
 
   updateCounter();
+
 })();
+
 </script>
 
 </div>
@@ -2095,6 +2111,10 @@ box-shadow:0 10px 30px rgba(0,0,0,.25); /* 그림자 */
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+
+
+  <!-- 🍀 Lucky 7 JS -->
+  <script src="lucky7.js"></script>
 
   <!-- 메인 js 파일 -->
   <script src="assets/js/main.js"></script>
